@@ -1,0 +1,60 @@
+# set speed (bpm)
+
+use_bpm 90
+
+# bass drum loop
+
+live_loop :bd do
+  sample :bd_haus
+  sleep 1
+end
+
+# high hat loop
+
+live_loop :hh do
+  sample :drum_cymbal_closed, amp: 0.5
+  sleep 0.5
+end
+
+# snare loop
+
+live_loop :sn do
+  sleep 1
+  sample :sn_dolf, amp: 0.6
+  sleep 1
+end
+
+# bass line loop
+
+live_loop :bass do
+  play :c3, amp: 0.5
+  sleep 0.5
+  play :d3, amp: 0.5
+  sleep 0.5
+  play :eb3, amp: 0.5
+  sleep 0.5
+  play :g3, amp: 0.5
+  sleep 0.5
+  play :a3, amp: 0.5
+  sleep 1
+  play :d3, amp: 0.6
+  sleep 1
+end
+
+# ambient sound loop
+
+live_loop :amb do
+  sample :ambi_choir, rate: 0.7, amp: 0.5
+  sleep 4
+end
+
+live_loop :melody do
+  use_synth :blade
+  sleep 2
+  play 60, amp: 0.6
+  sleep 0.5
+  play 62, amp: 0.6
+  sleep 0.5
+  play 63, amp: 0.6
+  sleep 1
+end
