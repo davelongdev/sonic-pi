@@ -1,0 +1,36 @@
+# set speed (bpm) and synth sound
+
+use_bpm 120
+use_synth :pulse
+
+# create loop1
+
+define :loop1 do
+  4.times do
+    sample :bd_sone
+    sleep 1
+    with_fx :slicer do
+      play :d4, amp: 0.3
+      sleep 1
+      play :e4, amp: 0.3
+      sample :sn_dolf
+      sleep 1
+    end
+    sample :hat_bdu, amp: 0.8
+    sleep 0.5
+    sample :hat_bdu, amp: 0.4
+    sleep 0.5
+  end
+end
+
+# call loop1
+
+loop1
+
+# call loop1 and sample together
+
+in_thread do
+  loop1
+end
+
+sample :ambi_drone, amp: 2
