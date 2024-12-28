@@ -1,0 +1,51 @@
+#--------------
+# Progression #
+#--------------
+
+
+# set bpm
+use_bpm 140
+
+# functions
+
+# 1. bass drum
+#-------------
+
+define :one do
+  4.times do
+    sample :bd_haus
+    sleep 1
+  end
+end
+
+# 2. bass & hh
+#-------------
+define :two do
+  
+  in_thread do
+    one
+  end
+  
+  2.times do
+    sleep 1
+    sample :drum_cymbal_closed
+    sleep 1
+  end
+end
+
+# 2. bd, hh, sample
+#-------------
+define :three do
+  
+  in_thread do
+    two
+  end
+  
+  sample :ambi_drone, amp: 0.6, sustain: 1, release: 1
+end
+
+# Song Structure / Function Calls
+
+one
+two
+three

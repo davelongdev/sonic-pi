@@ -1,3 +1,7 @@
+############################
+## overlapping live loops ##
+############################
+
 # set speed (bpm)
 
 use_bpm 90
